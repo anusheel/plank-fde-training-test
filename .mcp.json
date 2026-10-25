@@ -1,6 +1,8 @@
 {
   "mcpServers": {
     "linear": { "command": "npx", "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"] },
-    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] }
+    "github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"] },
+    "workbot-db": { "command": "npx", "args": ["tsx", "mcp/db/server.ts"], "env": { "DATABASE_URL": "${DATABASE_URL}" } },
+    "workbot-posthog": { "command": "npx", "args": ["tsx", "mcp/posthog/server.ts"], "env": { "POSTHOG_API_KEY": "${POSTHOG_API_KEY}", "POSTHOG_PROJECT": "${POSTHOG_PROJECT}" } }
   }
 }
